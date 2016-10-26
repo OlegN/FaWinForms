@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaControls", "FaControls\FaControls.csproj", "{9CE5B21B-D7E4-4691-807A-0A8B01A8576E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaTestForm", "FaTestForm\FaTestForm.csproj", "{E99DDF0C-C32C-40AD-A6B7-F20ABBEDAAAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CE5B21B-D7E4-4691-807A-0A8B01A8576E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE5B21B-D7E4-4691-807A-0A8B01A8576E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE5B21B-D7E4-4691-807A-0A8B01A8576E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE5B21B-D7E4-4691-807A-0A8B01A8576E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E99DDF0C-C32C-40AD-A6B7-F20ABBEDAAAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E99DDF0C-C32C-40AD-A6B7-F20ABBEDAAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E99DDF0C-C32C-40AD-A6B7-F20ABBEDAAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E99DDF0C-C32C-40AD-A6B7-F20ABBEDAAAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
