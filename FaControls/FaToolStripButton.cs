@@ -25,7 +25,7 @@ namespace FaControls
 
 		[Category("FaButton")]
 		[DefaultValue(18)]
-		public int IconFontSize
+		public int IconSize
 		{
 			get { return _iconFontSize; }
 			set
@@ -213,7 +213,7 @@ namespace FaControls
 				string symb = IconSymbol;
 				if (!String.IsNullOrEmpty(IconSymbol) && IconFont != IconFontFamilyEnum.None)
 				{
-					_image = FaIconManager.RenderFontIcon(this.IconFont, this.IconSymbol, this.IconFontSize, this.IconRenderColor, this.IconBgColor, this.IconOffset, this.IconRotationAngle);
+					_image = FaIconManager.RenderFontIcon(this.IconFont, this.IconSymbol, this.IconSize, this.IconRenderColor, this.IconBgColor, this.IconOffset, this.IconRotationAngle);
 				}
 			}
 			return _image;

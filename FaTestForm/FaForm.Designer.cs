@@ -35,25 +35,27 @@
 			this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.faButton6 = new FaControls.FaButton();
-			this.faButton3 = new FaControls.FaButton();
-			this.tbNotf = new FaControls.FaTabButton();
-			this.tbHeadph = new FaControls.FaTabButton();
-			this.tbMic = new FaControls.FaTabButton();
-			this.faButton5 = new FaControls.FaButton();
-			this.faButton4 = new FaControls.FaButton();
-			this.faSelectButton1 = new FaControls.FaSelectButton();
-			this.faButton2 = new FaControls.FaButton();
 			this.faToolStripButton1 = new FaControls.FaToolStripButton();
 			this.faToolStripButton5 = new FaControls.FaToolStripButton();
 			this.faToolStripButton4 = new FaControls.FaToolStripButton();
 			this.faToolStripButton3 = new FaControls.FaToolStripButton();
 			this.faToolStripButton2 = new FaControls.FaToolStripButton();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.tbNotf = new FaControls.FaTabButton();
+			this.tbHeadph = new FaControls.FaTabButton();
+			this.tbMic = new FaControls.FaTabButton();
+			this.faPictureBox1 = new FaControls.FaPictureBox();
+			this.faButton6 = new FaControls.FaButton();
+			this.faButton3 = new FaControls.FaButton();
+			this.faButton5 = new FaControls.FaButton();
+			this.faButton4 = new FaControls.FaButton();
+			this.faSelectButton1 = new FaControls.FaSelectButton();
+			this.faButton2 = new FaControls.FaButton();
 			this.faButton1 = new FaControls.FaButton();
 			this.menuStrip1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.faPictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// imageList1
@@ -108,6 +110,68 @@
 			this.toolStrip1.TabIndex = 3;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
+			// faToolStripButton1
+			// 
+			this.faToolStripButton1.AutoSize = false;
+			this.faToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.faToolStripButton1.IconColor = System.Drawing.SystemColors.HotTrack;
+			this.faToolStripButton1.IconSize = 30;
+			this.faToolStripButton1.IconSymbol = "f15b";
+			this.faToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.faToolStripButton1.Name = "faToolStripButton1";
+			this.faToolStripButton1.Size = new System.Drawing.Size(32, 32);
+			this.faToolStripButton1.Text = "faToolStripButton1";
+			// 
+			// faToolStripButton5
+			// 
+			this.faToolStripButton5.AutoSize = false;
+			this.faToolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.faToolStripButton5.IconColor = System.Drawing.Color.Crimson;
+			this.faToolStripButton5.IconSize = 30;
+			this.faToolStripButton5.IconSymbol = "f00d";
+			this.faToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.faToolStripButton5.Name = "faToolStripButton5";
+			this.faToolStripButton5.Size = new System.Drawing.Size(32, 32);
+			this.faToolStripButton5.Text = "faToolStripButton2";
+			// 
+			// faToolStripButton4
+			// 
+			this.faToolStripButton4.AutoSize = false;
+			this.faToolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.faToolStripButton4.IconColor = System.Drawing.Color.Crimson;
+			this.faToolStripButton4.IconOffset = new System.Drawing.Point(-1, 0);
+			this.faToolStripButton4.IconSize = 30;
+			this.faToolStripButton4.IconSymbol = "&#xf030;";
+			this.faToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.faToolStripButton4.Name = "faToolStripButton4";
+			this.faToolStripButton4.Size = new System.Drawing.Size(32, 32);
+			this.faToolStripButton4.Text = "faToolStripButton2";
+			// 
+			// faToolStripButton3
+			// 
+			this.faToolStripButton3.AutoSize = false;
+			this.faToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.faToolStripButton3.Enabled = false;
+			this.faToolStripButton3.IconColor = System.Drawing.Color.Crimson;
+			this.faToolStripButton3.IconSize = 30;
+			this.faToolStripButton3.IconSymbol = "f201";
+			this.faToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.faToolStripButton3.Name = "faToolStripButton3";
+			this.faToolStripButton3.Size = new System.Drawing.Size(32, 32);
+			this.faToolStripButton3.Text = "faToolStripButton2";
+			// 
+			// faToolStripButton2
+			// 
+			this.faToolStripButton2.AutoSize = false;
+			this.faToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.faToolStripButton2.IconColor = System.Drawing.Color.Crimson;
+			this.faToolStripButton2.IconSize = 30;
+			this.faToolStripButton2.IconSymbol = "f0ee";
+			this.faToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.faToolStripButton2.Name = "faToolStripButton2";
+			this.faToolStripButton2.Size = new System.Drawing.Size(32, 32);
+			this.faToolStripButton2.Text = "faToolStripButton2";
+			// 
 			// panel1
 			// 
 			this.panel1.Controls.Add(this.tbNotf);
@@ -117,32 +181,6 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(641, 235);
 			this.panel1.TabIndex = 11;
-			// 
-			// faButton6
-			// 
-			this.faButton6.IconColor = System.Drawing.Color.DarkGreen;
-			this.faButton6.IconFont = FaControls.IconFontFamilyEnum.TypIcons;
-			this.faButton6.IconSymbol = "e070";
-			this.faButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.faButton6.Location = new System.Drawing.Point(12, 134);
-			this.faButton6.Name = "faButton6";
-			this.faButton6.Size = new System.Drawing.Size(132, 24);
-			this.faButton6.TabIndex = 13;
-			this.faButton6.Text = "TypIcon Button";
-			this.faButton6.UseVisualStyleBackColor = true;
-			// 
-			// faButton3
-			// 
-			this.faButton3.IconColor = System.Drawing.Color.SteelBlue;
-			this.faButton3.IconFont = FaControls.IconFontFamilyEnum.IonIcons;
-			this.faButton3.IconSymbol = "f341";
-			this.faButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.faButton3.Location = new System.Drawing.Point(12, 104);
-			this.faButton3.Name = "faButton3";
-			this.faButton3.Size = new System.Drawing.Size(132, 24);
-			this.faButton3.TabIndex = 12;
-			this.faButton3.Text = "IonIcon Button";
-			this.faButton3.UseVisualStyleBackColor = true;
 			// 
 			// tbNotf
 			// 
@@ -199,6 +237,44 @@
 			this.tbMic.UseVisualStyleBackColor = true;
 			this.tbMic.SelectionChanged += new System.EventHandler(this.faTabButton2_SelectionChanged);
 			// 
+			// faPictureBox1
+			// 
+			this.faPictureBox1.IconColor = System.Drawing.Color.RoyalBlue;
+			this.faPictureBox1.IconSize = 0;
+			this.faPictureBox1.IconSymbol = "f0c0";
+			this.faPictureBox1.Location = new System.Drawing.Point(521, 104);
+			this.faPictureBox1.Name = "faPictureBox1";
+			this.faPictureBox1.Size = new System.Drawing.Size(132, 74);
+			this.faPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.faPictureBox1.TabIndex = 15;
+			this.faPictureBox1.TabStop = false;
+			// 
+			// faButton6
+			// 
+			this.faButton6.IconColor = System.Drawing.Color.DarkGreen;
+			this.faButton6.IconFont = FaControls.IconFontFamilyEnum.TypIcons;
+			this.faButton6.IconSymbol = "e070";
+			this.faButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.faButton6.Location = new System.Drawing.Point(12, 134);
+			this.faButton6.Name = "faButton6";
+			this.faButton6.Size = new System.Drawing.Size(132, 24);
+			this.faButton6.TabIndex = 13;
+			this.faButton6.Text = "TypIcon Button";
+			this.faButton6.UseVisualStyleBackColor = true;
+			// 
+			// faButton3
+			// 
+			this.faButton3.IconColor = System.Drawing.Color.SteelBlue;
+			this.faButton3.IconFont = FaControls.IconFontFamilyEnum.IonIcons;
+			this.faButton3.IconSymbol = "f341";
+			this.faButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.faButton3.Location = new System.Drawing.Point(12, 104);
+			this.faButton3.Name = "faButton3";
+			this.faButton3.Size = new System.Drawing.Size(132, 24);
+			this.faButton3.TabIndex = 12;
+			this.faButton3.Text = "IonIcon Button";
+			this.faButton3.UseVisualStyleBackColor = true;
+			// 
 			// faButton5
 			// 
 			this.faButton5.IconColor = System.Drawing.Color.DarkRed;
@@ -249,72 +325,10 @@
 			this.faButton2.Text = "Fa Button";
 			this.faButton2.UseVisualStyleBackColor = true;
 			// 
-			// faToolStripButton1
-			// 
-			this.faToolStripButton1.AutoSize = false;
-			this.faToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.faToolStripButton1.IconColor = System.Drawing.SystemColors.HotTrack;
-			this.faToolStripButton1.IconFontSize = 30;
-			this.faToolStripButton1.IconSymbol = "f15b";
-			this.faToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.faToolStripButton1.Name = "faToolStripButton1";
-			this.faToolStripButton1.Size = new System.Drawing.Size(32, 32);
-			this.faToolStripButton1.Text = "faToolStripButton1";
-			// 
-			// faToolStripButton5
-			// 
-			this.faToolStripButton5.AutoSize = false;
-			this.faToolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.faToolStripButton5.IconColor = System.Drawing.Color.Crimson;
-			this.faToolStripButton5.IconFontSize = 30;
-			this.faToolStripButton5.IconSymbol = "f00d";
-			this.faToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.faToolStripButton5.Name = "faToolStripButton5";
-			this.faToolStripButton5.Size = new System.Drawing.Size(32, 32);
-			this.faToolStripButton5.Text = "faToolStripButton2";
-			// 
-			// faToolStripButton4
-			// 
-			this.faToolStripButton4.AutoSize = false;
-			this.faToolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.faToolStripButton4.IconColor = System.Drawing.Color.Crimson;
-			this.faToolStripButton4.IconFontSize = 30;
-			this.faToolStripButton4.IconOffset = new System.Drawing.Point(-1, 0);
-			this.faToolStripButton4.IconSymbol = "&#xf030;";
-			this.faToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.faToolStripButton4.Name = "faToolStripButton4";
-			this.faToolStripButton4.Size = new System.Drawing.Size(32, 32);
-			this.faToolStripButton4.Text = "faToolStripButton2";
-			// 
-			// faToolStripButton3
-			// 
-			this.faToolStripButton3.AutoSize = false;
-			this.faToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.faToolStripButton3.Enabled = false;
-			this.faToolStripButton3.IconColor = System.Drawing.Color.Crimson;
-			this.faToolStripButton3.IconFontSize = 30;
-			this.faToolStripButton3.IconSymbol = "f201";
-			this.faToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.faToolStripButton3.Name = "faToolStripButton3";
-			this.faToolStripButton3.Size = new System.Drawing.Size(32, 32);
-			this.faToolStripButton3.Text = "faToolStripButton2";
-			// 
-			// faToolStripButton2
-			// 
-			this.faToolStripButton2.AutoSize = false;
-			this.faToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.faToolStripButton2.IconColor = System.Drawing.Color.Crimson;
-			this.faToolStripButton2.IconFontSize = 30;
-			this.faToolStripButton2.IconSymbol = "f0ee";
-			this.faToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.faToolStripButton2.Name = "faToolStripButton2";
-			this.faToolStripButton2.Size = new System.Drawing.Size(32, 32);
-			this.faToolStripButton2.Text = "faToolStripButton2";
-			// 
 			// faButton1
 			// 
 			this.faButton1.IconColor = System.Drawing.SystemColors.ControlText;
-			this.faButton1.IconFontSize = 16;
+			this.faButton1.IconSize = 16;
 			this.faButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.faButton1.Location = new System.Drawing.Point(0, 0);
 			this.faButton1.Name = "faButton1";
@@ -326,6 +340,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(665, 480);
+			this.Controls.Add(this.faPictureBox1);
 			this.Controls.Add(this.faButton6);
 			this.Controls.Add(this.faButton3);
 			this.Controls.Add(this.panel1);
@@ -347,6 +362,7 @@
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.faPictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -376,6 +392,7 @@
 		private FaControls.FaTabButton tbNotf;
 		private FaControls.FaButton faButton3;
 		private FaControls.FaButton faButton6;
+		private FaControls.FaPictureBox faPictureBox1;
 	}
 }
 

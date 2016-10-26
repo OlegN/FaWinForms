@@ -5,25 +5,28 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FaControls
 {
-	public partial class FaLinkButton : LinkLabel
+	public partial class FaPictureBox : PictureBox, IFaControl
 	{
-		private System.ComponentModel.IContainer components = null;
+		#region Properties
 
-		private Bitmap _image = null;
-		private Color? _iconColor = null;
-		private IconFontFamilyEnum _fontType = IconFontFamilyEnum.None;
-		private int _iconFontSize = 16;
-		private string _iconSymbol = null;
+		private IconFontFamilyEnum _fontType = IconFontFamilyEnum.FontAwesome;
+		private string _iconSymbol = "f024";
+		private int _iconFontSize = 18;
+		private Color _iconColor = Color.Black;
+		private Color _bgColor = Color.Transparent;
 		private Point _iconOffset = Point.Empty;
 		private int _rotationAngle = 0;
 
+		private Bitmap _image = null;
 
 		[Category("FaButton")]
-		public int IconFontSize
+		[DefaultValue(18)]
+		public int IconSize
 		{
 			get { return _iconFontSize; }
 			set
@@ -37,7 +40,7 @@ namespace FaControls
 		}
 
 		[Category("FaButton")]
-		[DefaultValue(IconFontFamilyEnum.None)]
+		[DefaultValue(typeof(IconFontFamilyEnum), "FontAwesome")]
 		public IconFontFamilyEnum IconFont
 		{
 			get
@@ -55,6 +58,7 @@ namespace FaControls
 		}
 
 		[Category("FaButton")]
+		[DefaultValue("f024")]
 		public string IconSymbol
 		{
 			get
@@ -72,7 +76,8 @@ namespace FaControls
 		}
 
 		[Category("FaButton")]
-		public virtual Color? IconColor
+		[DefaultValue(typeof(Color), "Black")]
+		public virtual Color IconColor
 		{
 			get
 			{
@@ -89,6 +94,25 @@ namespace FaControls
 		}
 
 		[Category("FaButton")]
+		[DefaultValue(typeof(Color), "Transparent")]
+		public virtual Color IconBgColor
+		{
+			get
+			{
+				return _bgColor;
+			}
+			set
+			{
+				if (_bgColor != value)
+				{
+					_bgColor = value;
+					OnIconChanged();
+				}
+			}
+		}
+
+		[Category("FaButton")]
+		[DefaultValue(typeof(Point), "0,0")]
 		public Point IconOffset
 		{
 			get
@@ -103,14 +127,6 @@ namespace FaControls
 					OnIconChanged();
 				}
 			}
-		}
-
-		[Category("FaButton")]
-		[System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-		public new Image Image
-		{
-			get { return base.Image; }
-			set { base.Image = value; }
 		}
 
 		[Category("FaButton")]
@@ -131,31 +147,35 @@ namespace FaControls
 			}
 		}
 
-		public FaLinkButton()
-			: base()
+		[Category("FaButton")]
+		[System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public new Image Image
 		{
-			InitializeComponent();
+			get { return base.Image; }
+			set { base.Image = value; }
 		}
+
+		protected virtual int ImageSize
+		{
+			get
+			{
+				return IconSize > 0 ? IconSize : Math.Min(this.Height, this.Width);
+			}
+		}
+		#endregion
 
 		protected override void OnPaint(PaintEventArgs e)
 		{
 			var img = GetIconBitmap();
-			if (img != null && (Image == null || Image != img))
+			if (img != null && (base.Image == null || base.Image != img))
 			{
-				//this.Image = img;
-
-				var imgWidth = img.Width;
-				var rect = new Rectangle(e.ClipRectangle.X + img.Width, e.ClipRectangle.Y, e.ClipRectangle.Width, e.ClipRectangle.Height);
-				PaintEventArgs args = new PaintEventArgs(e.Graphics, rect);
-				base.OnPaint(args);
-
-				e.Graphics.DrawImage(img, GetImageBounds());
+				base.Image = img;
+				base.OnPaint(e);
 			}
 			else
 			{
 				base.OnPaint(e);
 			}
-
 			return;
 		}
 
@@ -173,6 +193,14 @@ namespace FaControls
 			}
 		}
 
+		protected Image GetImage()
+		{
+			Image bmp = GetIconBitmap();
+			if (bmp == null)
+				bmp = this.Image;
+			return bmp;
+		}
+
 		protected Bitmap GetIconBitmap()
 		{
 			if (_image == null)
@@ -180,32 +208,10 @@ namespace FaControls
 				string symb = IconSymbol;
 				if (!String.IsNullOrEmpty(IconSymbol) && IconFont != IconFontFamilyEnum.None)
 				{
-					var color = this.IconColor.GetValueOrDefault(this.LinkColor);
-					if (!this.Enabled)
-						color = this.DisabledLinkColor;
-
-					_image = FaIconManager.RenderFontIcon(IconFont, IconSymbol, IconFontSize, color, Color.Transparent, IconOffset, IconRotationAngle);
+					_image = FaIconManager.RenderFontIcon(this.IconFont, this.IconSymbol, this.ImageSize, this.IconColor, this.IconBgColor, this.IconOffset, this.IconRotationAngle);
 				}
 			}
 			return _image;
-		}
-
-		protected Rectangle GetImageBounds(int left = 3, int top = -1)
-		{
-			var rect = Rectangle.Empty;
-			var icon = GetIconBitmap();
-
-			if (icon != null)
-			{
-				var h = (int)Math.Max((this.Height - icon.Height) / 2, 0);
-
-				if (top < 0)
-					top = h;
-
-				rect = new Rectangle(left, top, icon.Width, icon.Height);
-			}
-
-			return rect;
 		}
 
 		protected override void OnResize(EventArgs e)
@@ -214,27 +220,14 @@ namespace FaControls
 			OnIconChanged();
 		}
 
-		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-		}
-
 		protected override void Dispose(bool disposing)
 		{
+			base.Dispose(disposing);
 			if (disposing)
 			{
-				if (components != null)
-					components.Dispose();
-
 				if (_image != null)
 					_image.Dispose();
 			}
-			base.Dispose(disposing);
-		}
-
-		protected override void OnMouseHover(EventArgs e)
-		{
-			base.OnMouseHover(e);
 		}
 	}
 }

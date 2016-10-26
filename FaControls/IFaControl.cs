@@ -9,7 +9,7 @@ namespace FaControls
 	public interface IFaControl
 	{
 		IconFontFamilyEnum IconFont { get; set; }
-		int IconFontSize { get; set; }
+		int IconSize { get; set; }
 		string IconSymbol { get; set; }
 		Color IconColor { get; set; }
 		Color IconBgColor { get; set; }

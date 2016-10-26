@@ -46,7 +46,7 @@
     <Compile Include="FaButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FaLinkButton.cs">
+    <Compile Include="FaPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="FaSelectButton.cs">

@@ -28,7 +28,7 @@ namespace FaControls
 
 		[Category("FaButton")]
 		[DefaultValue(18)]
-		public int IconFontSize
+		public int IconSize
 		{
 			get { return _iconFontSize; }
 			set
@@ -167,8 +167,7 @@ namespace FaControls
 			}
 		}
 
-		public FaButton() :
-			base()
+		public FaButton()
 		{
 			this.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 		}
@@ -217,7 +216,7 @@ namespace FaControls
 				string symb = IconSymbol;
 				if (!String.IsNullOrEmpty(IconSymbol) && IconFont != IconFontFamilyEnum.None)
 				{
-					_image = FaIconManager.RenderFontIcon(this.IconFont, this.IconSymbol, this.IconFontSize, this.IconRenderColor, this.IconBgColor, this.IconOffset, this.IconRotationAngle);
+					_image = FaIconManager.RenderFontIcon(this.IconFont, this.IconSymbol, this.IconSize, this.IconRenderColor, this.IconBgColor, this.IconOffset, this.IconRotationAngle);
 				}
 			}
 			return _image;
@@ -227,24 +226,6 @@ namespace FaControls
 		{
 			base.OnResize(e);
 			OnIconChanged();
-		}
-
-		protected Rectangle GetImageBounds(int left = 3, int top = -1)
-		{
-			var rect = Rectangle.Empty;
-			var icon = GetImage();
-
-			if (icon != null)
-			{
-				var h = (int)Math.Max((this.Height - icon.Height) / 2, 0);
-
-				if (top < 0)
-					top = h;
-
-				rect = new Rectangle(left, top, icon.Width, icon.Height);
-			}
-
-			return rect;
 		}
 
 		protected override void Dispose(bool disposing)
